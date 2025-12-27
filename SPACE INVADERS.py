@@ -52,3 +52,13 @@ def player(x,y):
     screen.blit(PI,(x,y))
 def enemy(x,y,i):
     screen.blit(EI[i],(x,y))
+def fire_bullet(x,y):
+    global BST
+    BST="FIRE"
+    screen.blit(BI,(x+16,y+10))
+def is_collision(ex,ey,bx,by):
+    distance=math.sqrt((math.pow(ex-bx,2))+(math.pow(ey-by,2)))
+    if distance<27:
+        return True
+    else:
+        return False
